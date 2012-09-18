@@ -24,6 +24,17 @@
 	<deployer-tools.version>0.1-SNAPSHOT</deployer-tools.version>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.subrosa.tools</groupId>
+      <artifactId>deployer-tools</artifactId>
+      <version>${deployer-tools.version}</version>
+      <type>tar.gz</type>
+      <classifier>bundle</classifier>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <resources>
       <resource>
@@ -65,6 +76,7 @@
               <phase>never-run</phase>
               <goals><goal>unpack-dependencies</goal></goals>
               <configuration>
+                <includeArtifactIds>deployer-tools</includeArtifactIds>
                 <includes>scripts/deploy.sh</includes>
                 <outputDirectory>${project.build.directory}</outputDirectory>
               </configuration>
@@ -107,6 +119,13 @@
       </plugin>
     </plugins>
 
+    <extensions>
+      <extension>
+        <groupId>com.subrosa.tools</groupId>
+        <artifactId>deployer-tools</artifactId>
+        <version>${deployer-tools.version}</version>
+      </extension>
+    </extensions>
   </build>
 
   <profiles>
