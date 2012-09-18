@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.subrosa.maven</groupId>
+    <artifactId>base-pom</artifactId>
+    <version>0.1</version>
+    <relativePath>base-pom</relativePath>
+  </parent>
+
+  <artifactId>poms</artifactId>
+  <packaging>pom</packaging>
+  <name>poms</name>
+  <description>
+	Overlord project for POMs.
+  </description>
+  <url>${urlRoot}/poms</url>
+
+  <scm>
+    <connection>scm:hg:https://hg.subrosagames.com/maven/poms</connection>
+    <developerConnection>scm:hg:https://hg.subrosagames.com/maven/poms</developerConnection>
+    <url>https://hg.subrosagames.com/maven/poms</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <modules>
+    <module>base-pom</module>
+    <module>webapp-pom</module>
+    <module>cli-pom</module>
+  </modules>
+
+</project>
