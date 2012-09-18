@@ -4,7 +4,7 @@
     <groupId>com.subrosa.maven</groupId>
     <artifactId>base-pom</artifactId>
 	<version>0.1-SNAPSHOT</version>
-    <relativePath>../base-pom</relativePath>
+	<relativePath>../base-pom</relativePath>
   </parent>
   <artifactId>cli-pom</artifactId>
   <packaging>pom</packaging>
@@ -21,19 +21,8 @@
     <external.config.repositoryRoot>https://hg.subrosagames.com/config</external.config.repositoryRoot>
     <external.config.repositoryUrl>scm:hg:${external.config.repositoryRoot}/${external.config.appName}</external.config.repositoryUrl>
     <external.config.repositoryRevision>default</external.config.repositoryRevision>
-    <deployer-tools.version>1.12</deployer-tools.version>
+	<deployer-tools.version>0.1-SNAPSHOT</deployer-tools.version>
   </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.subrosa.tools</groupId>
-      <artifactId>deployer-tools</artifactId>
-      <version>${deployer-tools.version}</version>
-      <type>tar.gz</type>
-      <classifier>bundle</classifier>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
 
   <build>
     <resources>
@@ -76,7 +65,6 @@
               <phase>never-run</phase>
               <goals><goal>unpack-dependencies</goal></goals>
               <configuration>
-                <includeArtifactIds>deployer-tools</includeArtifactIds>
                 <includes>scripts/deploy.sh</includes>
                 <outputDirectory>${project.build.directory}</outputDirectory>
               </configuration>
@@ -119,13 +107,6 @@
       </plugin>
     </plugins>
 
-    <extensions>
-      <extension>
-        <groupId>com.subrosa.tools</groupId>
-        <artifactId>deployer-tools</artifactId>
-        <version>${deployer-tools.version}</version>
-      </extension>
-    </extensions>
   </build>
 
   <profiles>

@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.subrosa.maven</groupId>
   <artifactId>base-pom</artifactId>
-  <version>0.1</version>
+  <version>0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>base-pom</name>
   <description>
@@ -83,11 +83,6 @@
          <artifactId>maven-enforcer-plugin</artifactId>
           <version>1.1.1</version>
           <dependencies>
-            <dependency>
-              <groupId>com.subrosa.tools</groupId>
-              <artifactId>enforcer-rules</artifactId>
-              <version>1.0</version>
-            </dependency>
           </dependencies>
 	    </plugin>
         <plugin>
@@ -204,13 +199,6 @@
         </executions>
       </plugin>
     </plugins>
-    <extensions>
-      <extension>
-        <groupId>com.subrosa.tools</groupId>
-        <artifactId>build</artifactId>
-        <version>1.7</version>
-      </extension>
-    </extensions>
 
   </build>
 
