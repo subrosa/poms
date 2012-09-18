@@ -86,7 +86,7 @@
             <dependency>
               <groupId>com.subrosa.tools</groupId>
               <artifactId>enforcer-rules</artifactId>
-              <version>0.1-SNAPSHOT</version>
+              <version>0.1</version>
             </dependency>
           </dependencies>
 	    </plugin>
@@ -207,8 +207,8 @@
     <extensions>
 	<extension>
         <groupId>com.subrosa.tools</groupId>
-        <artifactId>build</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <artifactId>build-extensions</artifactId>
+        <version>0.1</version>
       </extension>
     </extensions> 
 

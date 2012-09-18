@@ -21,7 +21,7 @@
     <external.config.repositoryRoot>https://hg.subrosagames.com/config</external.config.repositoryRoot>
     <external.config.repositoryUrl>scm:hg:${external.config.repositoryRoot}/${external.config.appName}</external.config.repositoryUrl>
     <external.config.repositoryRevision>default</external.config.repositoryRevision>
-	<deployer-tools.version>0.1-SNAPSHOT</deployer-tools.version>
+	<deployer-tools.version>0.1</deployer-tools.version>
   </properties>
 
   <dependencies>

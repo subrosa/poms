@@ -34,7 +34,7 @@
     <!-- Property to support command-line invocation of properties:write-project-properties -->
     <properties.outputFile>${project.build.directory}/project.properties</properties.outputFile>
 
-    <deployer-tools.version>0.1-SNAPSHOT</deployer-tools.version>
+    <deployer-tools.version>0.1</deployer-tools.version>
     <org.slf4j.version>1.6.6</org.slf4j.version>
     <org.springframework.version>3.0.7.RELEASE</org.springframework.version>
     <postgresql.version>8.3-606.jdbc4</postgresql.version>
