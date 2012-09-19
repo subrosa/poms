@@ -174,7 +174,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>cobertura-maven-plugin</artifactId>
-          <version>2.5-subrosa-2-r12883</version>
+          <version>2.5-subrosa-1-r12883</version>
         </plugin>
 
 		<plugin>
