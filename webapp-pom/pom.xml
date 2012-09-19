@@ -12,7 +12,7 @@
   <description>
 	Pom for web applications.
   </description>
-  <url>${urlRoot}/default-webapp-pom</url>
+  <url>${urlRoot}/webapp-pom</url>
 
   <properties>
     <external.config.environmentDirectory>/opt/subrosa/etc</external.config.environmentDirectory>

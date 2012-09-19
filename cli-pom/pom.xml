@@ -12,7 +12,7 @@
   <description>
 	Pom for command line applications.
   </description>
-  <url>${urlRoot}/default-cli-pom</url>
+  <url>${urlRoot}/cli-pom</url>
 
   <properties>
     <external.config.environmentDirectory>/opt/subrosa/etc</external.config.environmentDirectory>

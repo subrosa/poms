@@ -8,7 +8,7 @@
   <description>
 	  Handle all commonalities between Subrosa projects.
   </description>
-  <url>${urlRoot}/default-pom</url>
+  <url>${urlRoot}/base-pom</url>
   <organization>
       <name>Subrosa</name>
       <url>http://subrosa.com/</url>
