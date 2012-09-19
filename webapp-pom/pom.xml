@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.subrosa.maven</groupId>
     <artifactId>base-pom</artifactId>
-    <version>0.3</version>
+    <version>0.4-SNAPSHOT</version>
     <relativePath>../base-pom</relativePath>
   </parent>
   <artifactId>webapp-pom</artifactId>
