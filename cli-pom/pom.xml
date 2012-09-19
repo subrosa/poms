@@ -113,10 +113,6 @@
         </executions>
       </plugin>
 
-      <plugin>
-        <groupId>com.subrosa.maven.plugins</groupId>
-        <artifactId>rpm-version-maven-plugin</artifactId>
-      </plugin>
     </plugins>
 
     <extensions>
