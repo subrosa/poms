@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.subrosa.maven</groupId>
   <artifactId>base-pom</artifactId>
-  <version>0.4-SNAPSHOT</version>
+  <version>0.4</version>
   <packaging>pom</packaging>
   <name>base-pom</name>
   <description>
