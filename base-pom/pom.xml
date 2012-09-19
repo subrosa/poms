@@ -129,6 +129,11 @@
             <scmVersionType>revision</scmVersionType>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
 		<plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-shade-plugin</artifactId>
@@ -200,6 +205,26 @@
             <goals>
               <goal>jar-no-fork</goal>
             </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-site-descriptor</id>
+            <goals><goal>enforce</goal></goals>
+            <configuration>
+              <rules>
+                 <requireFilesExist>
+                    <files>
+                        <file>src/site/site.xml</file>
+                    </files>
+                     <message>Project is missing a site descriptor (src/site/site.xml).</message>
+                 </requireFilesExist>
+              </rules>
+            </configuration>
           </execution>
         </executions>
       </plugin>
@@ -307,6 +332,11 @@
       <name>Subrosa Snapshots Repository</name>
       <url>http://nexus.subrosagames.com/content/repositories/snapshots</url>
     </snapshotRepository>
+    <site>
+      <id>subrosa-site</id>
+      <name>Subrosa Maven Docs</name>
+      <url>${siteDeployRoot}/base-pom</url>
+    </site>
   </distributionManagement>
 
   <ciManagement>

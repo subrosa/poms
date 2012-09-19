@@ -1044,4 +1044,11 @@
     </profile>
   </profiles>
 
+  <distributionManagement>
+    <site>
+      <id>subrosa-site</id>
+      <name>Subrosa Maven Docs</name>
+      <url>${siteDeployRoot}/webapp-pom</url>
+    </site>
+  </distributionManagement>
 </project>

@@ -312,7 +312,7 @@
     <site>
       <id>subrosa-site</id>
       <name>Subrosa Maven Docs</name>
-      <url>${siteDeployRoot}/default-cli-pom</url>
+      <url>${siteDeployRoot}/cli-pom</url>
     </site>
   </distributionManagement>
 
