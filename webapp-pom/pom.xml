@@ -200,21 +200,6 @@
           </dependencies>
         </plugin>
 
-        <plugin>  <!-- Setup the common properties for mongo migrations. -->
-          <groupId>com.subrosa.maven.plugins</groupId>
-          <artifactId>mongo-maven-plugin</artifactId>
-          <version>1.0.14</version>
-          <configuration>
-            <replicaSet>${mongo.migration.replicaSet}</replicaSet>
-            <database>${mongo.migration.name}</database>
-            <user>${mongo.migration.username}</user>
-            <password>${mongo.migration.password}</password>
-            <currentRelease>${mongo.migration.currentRelease}</currentRelease>
-            <migrationsPath>${mongo.migration.migrationsPath}</migrationsPath>
-            <skipExecution>${mongo.migration.skipExecution}</skipExecution>
-          </configuration>
-        </plugin>
-
         <plugin> <!-- Setup the parameters for use while loading fixtures. -->
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>dbunit-maven-plugin</artifactId>
@@ -279,7 +264,7 @@
         <plugin>
           <groupId>com.subrosa.maven.plugins</groupId>
           <artifactId>deployer-pom-maven-plugin</artifactId>
-          <version>1.0.1</version>
+          <version>0.1</version>
         </plugin>
 
         <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
