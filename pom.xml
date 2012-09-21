@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.subrosa.maven</groupId>
     <artifactId>base-pom</artifactId>
-    <version>0.7-SNAPSHOT</version>
+    <version>0.7</version>
     <relativePath>base-pom</relativePath>
   </parent>
 
@@ -20,7 +20,7 @@
     <connection>scm:hg:https://hg.subrosagames.com/maven/poms</connection>
     <developerConnection>scm:hg:https://hg.subrosagames.com/maven/poms</developerConnection>
     <url>https://hg.subrosagames.com/maven/poms</url>
-    <tag>poms-0.1</tag>
+    <tag>poms-0.7</tag>
   </scm>
 
   <modules>
