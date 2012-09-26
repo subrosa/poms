@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.subrosa.maven</groupId>
     <artifactId>base-pom</artifactId>
-    <version>0.7-SNAPSHOT</version>
+    <version>0.8-SNAPSHOT</version>
     <relativePath>base-pom</relativePath>
   </parent>
 
