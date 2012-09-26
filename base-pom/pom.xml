@@ -326,13 +326,13 @@
     <repository>
       <id>subrosa-releases</id>
       <name>Subrosa Release Repository</name>
-      <url>http://nexus.subrosagames.com/content/repositories/releases</url>
+      <url>https://nexus.subrosagames.com/content/repositories/releases</url>
     </repository>
     <snapshotRepository>
       <uniqueVersion>false</uniqueVersion>
       <id>subrosa-snapshots</id>
       <name>Subrosa Snapshots Repository</name>
-      <url>http://nexus.subrosagames.com/content/repositories/snapshots</url>
+      <url>https://nexus.subrosagames.com/content/repositories/snapshots</url>
     </snapshotRepository>
     <site>
       <id>subrosa-site</id>
