@@ -28,8 +28,6 @@
 
     <!-- Some defaults for database migration -->
     <db.migration.skipExecution>false</db.migration.skipExecution>
-    <mongo.migration.skipExecution>false</mongo.migration.skipExecution>
-    <mongo.migration.currentRelease>${db.migration.currentRelease}</mongo.migration.currentRelease>
 
     <!-- Property to support command-line invocation of properties:write-project-properties -->
     <properties.outputFile>${project.build.directory}/project.properties</properties.outputFile>
@@ -663,55 +661,6 @@
       </build>
     </profile>
 
-    <profile>
-      <id>mongo-migration-new</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-enforcer-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>enforce-for-new-migration</id>
-                <goals><goal>enforce</goal></goals>
-                <configuration>
-                  <rules>
-                    <requireFilesDontExist>
-                      <files>
-                        <file>src/main/conf/deployer.conf</file>
-                      </files>
-                      <message>Can't create new migrations within a deployer artifact.</message>
-                    </requireFilesDontExist>
-                    <requireProperty>
-                      <property>db.migration.phase</property>
-                      <message>Must specify a phase by activating one of the following profiles: pre-downtime, downtime, post-downtime</message>
-                      <regex>^(|pre-|post-)downtime$</regex>
-                      <regexMessage>Migration phase must be one of: pre-downtime, downtime, post-downtime (use the profiles!)</regexMessage>
-                    </requireProperty>
-                  </rules>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-
-          <plugin>
-            <groupId>com.subrosa.maven.plugins</groupId>
-            <artifactId>mongo-maven-plugin</artifactId>
-            <configuration>
-              <phase>${db.migration.phase}</phase>
-            </configuration>
-            <executions>
-              <execution>
-                <id>new</id>
-                <phase>generate-resources</phase>
-                <goals><goal>new</goal></goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
       <profile>
         <id>db-migration-check</id>
         <build>
@@ -739,21 +688,6 @@
             <plugin>
               <groupId>com.carbonfive.db-support</groupId>
               <artifactId>db-migration-maven-plugin</artifactId>
-              <configuration>
-                <maxPhaseToApply>${db.migration.phase}</maxPhaseToApply>
-              </configuration>
-              <executions>
-                <execution>
-                  <id>check</id>
-                  <phase>process-resources</phase>
-                  <goals><goal>check</goal></goals>
-                </execution>
-              </executions>
-            </plugin>
-
-            <plugin>
-              <groupId>com.subrosa.maven.plugins</groupId>
-              <artifactId>mongo-maven-plugin</artifactId>
               <configuration>
                 <maxPhaseToApply>${db.migration.phase}</maxPhaseToApply>
               </configuration>
@@ -796,21 +730,6 @@
             <plugin>
               <groupId>com.carbonfive.db-support</groupId>
               <artifactId>db-migration-maven-plugin</artifactId>
-              <configuration>
-                <maxPhaseToApply>${db.migration.phase}</maxPhaseToApply>
-              </configuration>
-              <executions>
-                <execution>
-                  <id>validate</id>
-                  <phase>process-resources</phase>
-                  <goals><goal>validate</goal></goals>
-                </execution>
-              </executions>
-            </plugin>
-
-            <plugin>
-              <groupId>com.subrosa.maven.plugins</groupId>
-              <artifactId>mongo-maven-plugin</artifactId>
               <configuration>
                 <maxPhaseToApply>${db.migration.phase}</maxPhaseToApply>
               </configuration>
@@ -868,21 +787,6 @@
               </execution>
             </executions>
           </plugin>
-
-          <plugin>
-            <groupId>com.subrosa.maven.plugins</groupId>
-            <artifactId>mongo-maven-plugin</artifactId>
-            <configuration>
-              <maxPhaseToApply>${db.migration.phase}</maxPhaseToApply>
-            </configuration>
-            <executions>
-              <execution>
-                <id>migrate</id>
-                <phase>process-resources</phase>
-                <goals><goal>migrate</goal></goals>
-              </execution>
-            </executions>
-          </plugin>
         </plugins>
       </build>
     </profile>
@@ -909,22 +813,6 @@
               </execution>
             </executions>
           </plugin>
-
-          <plugin>
-            <groupId>com.subrosa.maven.plugins</groupId>
-            <artifactId>mongo-maven-plugin</artifactId>
-            <configuration>
-              <maxPhaseToApply>post-downtime</maxPhaseToApply>
-              <skipCurrentRelease>${skipCurrentRelease}</skipCurrentRelease>
-            </configuration>
-            <executions>
-              <execution>
-                <id>migrate</id>
-                <phase>process-resources</phase>
-                <goals><goal>reset</goal></goals>
-              </execution>
-            </executions>
-          </plugin>
         </plugins>
       </build>
     </profile>
@@ -937,21 +825,6 @@
           <plugin>
             <groupId>com.carbonfive.db-support</groupId>
             <artifactId>db-migration-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>recreate</id>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>drop</goal>
-                  <goal>create</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-          <plugin>
-            <groupId>com.subrosa.maven.plugins</groupId>
-            <artifactId>mongo-maven-plugin</artifactId>
             <executions>
               <execution>
                 <id>recreate</id>
