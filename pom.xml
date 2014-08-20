@@ -17,9 +17,9 @@
   <url>${urlRoot}/poms</url>
 
   <scm>
-    <connection>scm:hg:https://hg.subrosagames.com/maven/poms</connection>
-    <developerConnection>scm:hg:https://hg.subrosagames.com/maven/poms</developerConnection>
-    <url>https://hg.subrosagames.com/maven/poms</url>
+    <connection>scm:git:https://github.com/subrosa/poms</connection>
+    <developerConnection>scm:git:https://github.com/subrosa/poms</developerConnection>
+    <url>https://github.com/subrosa/poms</url>
     <tag>poms-0.1</tag>
   </scm>
 
