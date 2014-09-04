@@ -1,0 +1,98 @@
+ -----
+ Build Tools
+ -----
+
+Build Tools
+
+ This package is a collection of resources -- and potentially code in
+ the future -- for use as a Maven build extension.  A build extension
+ makes resources available to the build process that are not otherwise
+ needed at runtime by a compiled artifact (else it would be a
+ dependency).  Build extensions are usually used to augment the Maven
+ plugins used during the build with custom configuration and/or code.
+
+ By including these resources in a build extension, we can share
+ custom configurations across projects without having to maintain
+ separate copies in each project.
+
+ Unless otherwise noted, this build extension and all its
+ configurations are present in the Default Java POM.  Any project that
+ inherits from default-java-pom will thus not have to set these up
+ directly.
+
+* Checkstyle Configuration
+
+ A configuration file for the Checkstyle plugin is at
+ <<<com.subrosa/tools/checkstyle.xml>>>.  In your POM, configure the
+ maven-checkstyle-plugin:
+
+---
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+          <configLocation>checkstyle/default.xml</configLocation>
+        </configuration>
+      </plugin>
+---
+
+ Note that this Checkstyle configuration is for Checkstyle 5.x, so
+ version 2.4 or later of maven-checkstyle-plugin is required.
+
+** Suppressing Checkstyle Checks
+
+ The Checkstyle configuration includes filters that allow you to
+ suppress some or all of Checkstyle's checks for portions of your code
+ by including specially-formatted comments. You can find the names of
+ Checkstyle's checks on the Checkstyle report.
+
+ Use suppressions sparingly. Their purpose is not to produce a clean
+ Checkstyle report, but rather to reduce noise in the report. Use
+ the most restrictive suppression that will get the job done (they are
+ presented here in order from most to least restrictive).
+
+*** Single Line, Single Check
+
+ Suppress a single check on a single line with a comment that includes
+ <<<SUPPRESS CHECKSTYLE check>>>, where <check> is the name of a check.
+
+---
+        try {
+            if (theSocket != null) {
+                theSocket.close();
+            }
+        } catch (IOException e) { // SUPPRESS CHECKSTYLE EmptyBlock
+            // Swallow this exception
+        }
+---
+
+*** Multiple Lines, Single Check
+
+ Suppress a single check on a number of lines with a comment of
+ <<<SUPPRESS CHECKSTYLE check NEXT num LINES>>>, where <check> is
+ the name of a check and <num> is the number of lines after the
+ comment for which to suppress.
+
+---
+    // SUPPRESS CHECKSTYLE JavadocVariable NEXT 3 LINES
+    public static final int HTTP_OK = 200;
+    public static final int HTTP_REDIRECT = 302;
+    public static final int HTTP_NOT_FOUND = 404;
+---
+
+*** Block of Lines, Multiple Checks
+
+ Multiple checks can be suppressed over a block of code surrounded by the
+ comments <<<CHECKSTYLE-OFF: checks>>> and <<<CHECKSTYLE-ON: checks>>>.
+ <Checks> is the name of one or more checks delimited by pipe (<<<'|'>>>)
+ characters.
+
+---
+    // CHECKSTYLE-OFF: JavadocMethod|LineLength
+    /*
+     * Lots of methods with long signatures whose documentation
+     * is provided elsewhere.
+     */
+    // CHECKSTYLE-ON: JavadocMethod|LineLength
+---

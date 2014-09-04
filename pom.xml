@@ -27,6 +27,7 @@
     <module>base-pom</module>
     <module>webapp-pom</module>
     <module>cli-pom</module>
+    <module>build-extensions</module>
   </modules>
 
   <distributionManagement>
