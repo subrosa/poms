@@ -245,13 +245,13 @@
         </executions>
       </plugin>
     </plugins>
-    <!--<extensions>-->
-	<!--<extension>-->
-        <!--<groupId>com.subrosa.tools</groupId>-->
-        <!--<artifactId>build-extensions</artifactId>-->
-        <!--<version>0.1</version>-->
-      <!--</extension>-->
-    <!--</extensions> -->
+    <extensions>
+      <extension>
+        <groupId>com.subrosa.tools</groupId>
+        <artifactId>build-extensions</artifactId>
+        <version>0.1</version>
+      </extension>
+    </extensions>
 
   </build>
 
